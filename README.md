@@ -16,10 +16,10 @@ Het project bevat een simpele **API endpoint** voor het genereren van data onder
 ---
 
 ## Vereisten
-# setup met docker
+### setup met docker
 - Docker en Docker Compose: de app bevat een docker omgeving. Deze installeert alle vereisten en de PHP Parallel extensie 
 
-# setup zonder docker
+### setup zonder docker
 - PHP 8.4+
 - Composer
 - Symfony CLI (optioneel, voor lokale server)
@@ -31,7 +31,7 @@ Het project bevat een simpele **API endpoint** voor het genereren van data onder
 
 ## Installatie
 
-# Met Docker
+### Met Docker
 1. Clone de repository:
 
 ```
@@ -68,7 +68,7 @@ docker compose exec php-wce symfony server:stop
 ```
 
 
-# Zonder Docker
+### Zonder Docker
 1. Zorg voor een omgeving die voldoet aan de vereisten
 2. Clone de repository:
 
@@ -107,7 +107,7 @@ maxWords        int     Maximum aantal woorden in de output
 forbiddenWords  array   Lijst van verboden woorden
 preferredWords  array   Lijst van voorkeurwoorden
 
-# Voorbeeld Form-data
+### Voorbeeld Form-data
 Key: text               Value: THE Fall the crush the pain the FALL THE FaLL
 Key: maxWords           Value: 100
 Key: forbiddenWords[]   Value: (optioneel, meerdere keys voor array)
@@ -117,7 +117,7 @@ Key: preferredWords[]   Value: (optioneel)
 Forbidden/Preferred woorden kunnen leeg blijven, maar voor arrays moet je [] of meerdere keys gebruiken.
 
 ## Tests
-# Unit
+### Unit
 ```
 docker compose exec php-wce vendor/bin/phpunit --testdox
 ```
@@ -125,7 +125,7 @@ docker compose exec php-wce vendor/bin/phpunit --testdox
 Unit tests staan in tests/Unit/
 Controller tests in tests/Controller/
 
-# Postman voorbeelden
+### Postman voorbeelden
 In /data/postman staat een bestand met Postman voorbeelden om de API endpoint aan te roepen. Laad deze in in Postman en ze werken out-of-the-box met de Docker versie van WCE.
 ```wce.postman_examples.json```
 
