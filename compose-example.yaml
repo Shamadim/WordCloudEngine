@@ -1,0 +1,29 @@
+name: docker-wce
+services:
+    php-wce:
+      container_name: php
+      #platform: <PLATFORM ARCHITECTURE>
+      build:
+        context: .
+        dockerfile: ./docker/Dockerfile
+        args:
+          COMPOSER_VERSION: 2.9.2 #composer version, default latest
+          PHP_VERSION: 8.4 #php version, default 8.4
+      ports: #extern:intern
+        - 8480:80 #port exposed on localhost e.g. 8080
+        - 9480:8000 #port exposed on localhost for symfony server; 9480 used in PostmanExamples
+        - 8443:443 #ssl port exposed on local host eg 8443
+      working_dir: /var/www/wce/wce # your root dir inside the container
+      volumes:
+        - wce:/var/www/wce:rw # same as working_dir
+      networks:
+        - wce
+volumes:
+    wce:
+      driver: local # bind mount to host machine
+      driver_opts:
+        type: 'none'
+        o: 'bind'
+        device: '${PWD}' # bind to current working directory
+networks:
+    wce: {}
