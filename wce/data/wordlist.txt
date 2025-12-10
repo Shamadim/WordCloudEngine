@@ -1,0 +1,15 @@
+apple
+banana
+orange
+grape
+melon
+pear
+strawberry
+car
+tree
+house
+computer
+keyboard
+mouse
+river
+mountain

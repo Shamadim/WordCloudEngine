@@ -1,0 +1,95 @@
+{
+	"info": {
+		"_postman_id": "6fa04822-534b-4edc-9dea-2cf8aa734ae8",
+		"name": "wce",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "5534428"
+	},
+	"item": [
+		{
+			"name": "UnameIT wordcloud postman example",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "text",
+							"value": "THE Fall the crush the pain the FALL THE FaLL",
+							"type": "text"
+						},
+						{
+							"key": "maxWords",
+							"value": "100",
+							"type": "text"
+						},
+						{
+							"key": "forbiddenWords[]",
+							"value": "THE",
+							"type": "text"
+						},
+						{
+							"key": "forbiddenWords[]",
+							"value": "fall",
+							"type": "text"
+						},
+						{
+							"key": "preferredWords[]",
+							"value": "THE",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:9480/wordcloudengine",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9480",
+					"path": [
+						"wordcloudengine"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "wce assessment tekst",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "text",
+							"value": "WordCloud teller\nEen wordcloud is een visuele representatie van welke woorden het vaakst voor komen in een stuk\ntekst of een website. Bijvoorbeeld:\nIn zijn meest simpele vorm zal een wordcloud de grootte van woorden baseren op het aantal keren\ndat een woord in een tekst voorkomt.\nOpdracht\nOntwerp een klasse die op basis van een tekst een gesorteerde lijst van woorden kan teruggeven,\nmet het aantal keer dat dit woord voorkomt. De code hoeft geen visuele weergave te doen van een\ndaadwerkelijke wordcloud, dit is de verantwoordelijkheid van een andere klasse. Maak het de beste\nwoordenteller voor een wordcloud die je je kan voorstellen.\nStel gerust vragen om de requirements te verduidelijken.\nExtra credit als de kandidaat er zelf om vraagt / follow up vragen:\n1) Hoe zou je de klasse aanpassen om bepaalde woorden (bijvoorbeeld lidwoorden, pers.\nVoornaamwoorden) te negeren?\n2) Hoe ga je om met leestekens?\n3) Hoe ga je om met ontbrekende spaties na een leesteken (het zijn tenslotte teksten van\ngebruikers)?\n4) Hoe zou je de klasse aanpassen om in parallel meerdere blokken tekst te analyseren?\n5) Hoe zou je deze klasse testbaar maken / testen?\n6) Variaties met een getallenteller?\n\nEen aantal dingen waar we dan over kunnen praten is potentieel gebruik van generics, parallel\nprogramming library, locking mechanisme bij multi-threaded, unit testing / test driven development,\nwelk return type wordt gekozen, etc. Er zijn wat mij betreft ook geen echt foute ontwerpen, meer de\ngedachtegang. Grijpt een kandidaat meteen naar een stift of gaat hij eerst verdere vragen stellen?\nWelke vragen komen er zelf al bij hem op voor verbetering? Hoe gaat hij om met testbaarheid?",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:9480/wordcloudengine",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9480",
+					"path": [
+						"wordcloudengine"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
